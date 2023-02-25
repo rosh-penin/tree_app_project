@@ -1,0 +1,20 @@
+<html>
+    {% load draw_menu %}
+<head>
+    <title>
+        {% block title%}
+        BaseTitle
+        {% endblock %}
+    </title>
+    
+</head>
+<body>
+    {% block content %}
+    <ul>
+        {% comment %} You need to call your menu by its slug field. {% endcomment %}
+        {% draw_menu 'main_menu' %}
+    </ul>
+    {% endblock %}
+</body>
+</html>
+    

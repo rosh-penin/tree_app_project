@@ -1,0 +1,15 @@
+<ul>
+    {% for object in members %}
+        <li>
+            {% if object.url %}
+            <a href="{{ object.url }}">{{ object.name }}</a>
+            {% else %}
+            <a href="?{{ menu }}={{ object.id }}">{{ object.name }}</a>
+            {% endif %}
+
+            {% if object.childs %}
+                    {% include 'tree_app/menu.html' with members=object.childs %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul>
